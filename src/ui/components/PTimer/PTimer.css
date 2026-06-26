@@ -16,7 +16,7 @@
             margin: auto;
             padding-top: 0px;
             text-align: center;
-            font-size: 2em;
+            font-size: 2rem;
             font-family: var(--pa-font-family);
             font-weight: var(--pa-fw-h1);
         }
