@@ -201,7 +201,7 @@
       display: flex;
       flex-direction: column;
       margin: auto 0;
-      width: min(600px, 100%);
+      width: min(500px, 100%);
       flex-grow: 0;
       justify-content: safe center;
       min-height: calc(var(--pa-widget-state, 0) * 100vh);
@@ -309,8 +309,9 @@
   }
 
   &-helpers-section {
-    @apply text-center pt-4;
+    @apply pt-4;
     line-height: 24px;
+    text-align: var(--pa-align-p);
 
     a {
       padding-left: 4px;
@@ -398,7 +399,8 @@
         color: #757575 !important;
         display: inline-block;
         transition: all .2s;
-        padding: 2px 4px;
+        padding-inline: 4px;
+        padding-block: 2px;
 
         &:hover,
         &.hover--demo {
