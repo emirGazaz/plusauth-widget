@@ -213,7 +213,7 @@
           color: rgb(var(--pa-color-primary)) !important;
         }
       }
-
+      &.error--demo,
       &.input--error {
         .input--wrap {
           border-bottom-color: rgb(var(--pa-color-error));
@@ -413,7 +413,7 @@
       font-size: 12px;
       font-family: var(--pa-font-family);
     }
-
+    &.error--demo,
     &--error {
       color: rgb(var(--pa-color-error)) !important;
 
