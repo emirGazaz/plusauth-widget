@@ -37,8 +37,9 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 
-import PBtn from './PBtn/PBtn.vue';
 import { resolveCssVariableVariant } from '../utils';
+
+import PBtn from './PBtn/PBtn.vue';
 
 const props = defineProps<{
   langKey: string,
@@ -59,7 +60,7 @@ const iconVariants = ['block', 'circle'] as const;
 const mode = ref<typeof iconVariants[number]>(resolveCssVariableVariant('--pa-icon-variant', iconVariants));
 
 onMounted(() => {
-  const element = btnRef.value ? (btnRef.value.$el || btnRef.value) : undefined;
+  const element = btnRef.value ? btnRef.value.$el || btnRef.value : undefined;
   mode.value = resolveCssVariableVariant('--pa-icon-variant', iconVariants, element);
 });
 

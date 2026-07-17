@@ -137,7 +137,7 @@ function onBlur(e: FocusEvent) {
 
   if (
     pointerDownInside.value ||
-    (relatedTarget && inputRef.value?.contains(relatedTarget))
+    relatedTarget && inputRef.value?.contains(relatedTarget)
   ) {
     return;
   }

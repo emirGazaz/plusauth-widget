@@ -6,7 +6,6 @@ import type { IPlusAuthContext, IWidgetSettings } from './interfaces';
 import { Theme } from './utils/theme';
 import { Translator, translatorKey } from './utils/translator';
 import { App } from './widget';
-import 'virtual:uno.css';
 
 export function createWidget(
   container: Element | string,
@@ -47,11 +46,12 @@ export function createWidget(
 
   const onDemoStateMessage = (event) => {
     if (event.data.type === 'SET_DEMO_STATES') {
-      const { hover, focus } = event.data.payload;
+      const { hover, focus, error } = event.data.payload;
       const all = targetElement.querySelectorAll('*');
       all.forEach((el) => {
         el.classList.toggle('pa__hover--demo', !!hover);
         el.classList.toggle('pa__focus--demo', !!focus);
+        el.classList.toggle('pa__error--demo', !!error);
       });
     }
   };
