@@ -329,35 +329,80 @@
   }
 
   &-social-button.btn {
-    @apply capitalize justify-start gap-2 bg-transparent text-gray-800 border border-gray-300 whitespace-normal;
+    @apply capitalize justify-start gap-3 bg-white text-gray-800 border border-gray-300 whitespace-normal;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 0.06);
     word-break: auto-phrase;
     min-height: min-content;
     transition-property: all;
     transition-timing-function: var(--pa-ease, var(--default-transition-timingFunction));
     transition-duration: .2s;
-
+  
     &:hover,
     &.hover--demo {
       @apply bg-gray-50 border-gray-400;
+      box-shadow: 0 3px 8px rgb(15 23 42 / 0.1);
       opacity: 1;
     }
-
+  
     &:focus,
     &.focus--demo {
       @apply outline-none ring-2 ring-primary/20 border-primary/50;
     }
 
-    &-circle {
-      @apply w-10 h-10 p-0 rounded-full overflow-hidden;
+    &.widget-social-button-circle {
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      max-width: 44px;
+      max-height: 44px;
+      flex: 0 0 44px;
+      justify-content: center;
+      padding: 0;
+      gap: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: 0 !important;
+      outline: 0 !important;
+      transition: none !important;
+
+      .btn__content {
+        display: none;
+      }
 
       .widget-social-icon {
-        @apply w-10 h-10;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        background-size: contain;
       }
 
       &:hover,
-      &.hover--demo {
-        filter: brightness(0.9);
+      &.hover--demo,
+      &:focus,
+      &.focus--demo,
+      &:focus-visible {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        outline: 0 !important;
+        opacity: 1;
       }
+    }
+
+    &.widget-social-button-circle {
+      border: 0 !important;
+      border-radius: 9999px !important;
+      overflow: hidden;
+    }
+
+
+    &.widget-social-button-circle:hover,
+    &.widget-social-button-circle.focus--demo,
+    &.widget-social-button-circle:focus,
+    &.widget-social-button-circle:focus-visible {
+      box-shadow: none !important;
+      border: 0 !important;
     }
   }
 
@@ -468,7 +513,7 @@
     object-position: center;
     max-width: 220px;
     max-height: 220px;
-    transition-property: transform, translate, scale, rotate;
+    transition-property: transform;
     transition-timing-function: var(--pa-ease, var(--default-transition-timingFunction));
     transition-duration: .3s;
 
@@ -489,7 +534,7 @@
       text-align: left;
       justify-content: start;
       color: rgb(var(--pa-color-primary));
-      transition-property: color, background-color, border-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke, --pa-gradient-from, --pa-gradient-via, --pa-gradient-to;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
       transition-timing-function: var(--pa-ease, var(--default-transition-timingFunction));
       transition-duration: .2s;
 

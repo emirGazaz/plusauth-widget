@@ -195,6 +195,10 @@ export function resolveCssVariableVariant<T extends readonly string[]>(
   }
   const index = Number(value)
 
+  if (variants.includes(value as T[number])) {
+    return value as T[number]
+  }
+
   return Number.isInteger(index) && index >= 0 && index < variants.length
     ? variants[index]
     : variants[0]
